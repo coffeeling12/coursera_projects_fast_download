@@ -17,5 +17,6 @@ If the file is too big, you may get an error and have to restart. If so, try the
       base=$(basename "$dir")
       tar -czf "${base}.tar.gz" "$dir"
     done
+    find . -maxdepth 1 -type f -exec tar cvfz hw.tar.gz {} +
     
     
