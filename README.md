@@ -9,4 +9,13 @@ Select "Coursera" again to take you to the Home directory.
 Check the hw.tar.gz file and then Download.
 After the file is downloaded, delete it.
 
-If the file is too big, you may have to navigate to subfolders and try the method there.
+If the file is too big, you may get an error and have to restart. If so, try the following instead, remembering to delete any tar files created.
+
+    %%bash
+    for dir in */
+    do
+      base=$(basename "$dir")
+      tar -czf "${base}.tar.gz" "$dir"
+    done
+    
+    
